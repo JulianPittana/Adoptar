@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.title</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    @System.Web.Optimization.Styles.Render("~/bundle/css")
+</head>
+<body id="cuerpo">
+    <!-- Barra de navegación -->
+    <nav class="navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Mostrar", "Fichas")">Adoptar</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Buscar", "Fichas")">Adoptar</a></li>
+                    <li><a href="@Url.Action("Agregar", "Fichas")">Dar en adopcion</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li><a href="#" onclick="bienvenida();" role="button">Ingresar</a></li>p'-->
+                    @if (Session["UsuarioLogueado"] != null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="nombreUsuario">@(((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre)</span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Mismascotas","Fichas")">Mis Mascotas</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a id="salir" href="@Url.Action("Logout","Usuarios")">Salir</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li id="ingresar"><a href="@Url.Action("Login","Usuarios")" role="button">Ingresar</a></li>
+                    }
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    @RenderBody()
+
+
+    <footer class="footer">
+        <div class="col-md-1 col-md-offset-9 img-responsive center-block">
+            <img src="~/Content/img/003-facebook-logo.png" />
+        </div>
+        <div class="col-md-1 img-responsive center-block">
+            <img src="~/Content/img/002-twitter-logo-silhouette.png" />
+        </div>
+        <div class="col-md-1 img-responsive center-block">
+            <img src="~/Content/img/001-instagram-social-network-logo-of-photo-camera.png" />
+        </div>
+
+</footer>
+    @System.Web.Optimization.Scripts.Render("~/bundle/js")
+</body>
+</html>

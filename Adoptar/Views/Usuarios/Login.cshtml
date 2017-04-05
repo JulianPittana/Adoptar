@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="fichalogin col-md-10 col-md-offset-1">
+    <form action="@Url.Action("DoLogin", "Usuarios")" method="post">
+        <h2 class="form-signin-heading">Ingresá tus credenciales</h2>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Direccion de email" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    </form>
+    </div>
