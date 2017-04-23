@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Modificar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <div class="fichauno col-md-12">
+        <form action="/Fichas/ModificarFicha" method="post" enctype="multipart/form-data">
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Tipo</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="tipo" value="@ViewBag.ficha.Tipo">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Sexo</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="sexo" value="@ViewBag.ficha.Sexo">
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Edad</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="edad" value="@ViewBag.ficha.Edad">
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Joven">Joven</option>
+                        <option value="Adulto">Adulto</option>
+                        <option value="Anciano">Anciano</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="nombre" value="@ViewBag.ficha.Nombre" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Ubicacion</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="ubicacion" value="@ViewBag.ficha.Ubicacion" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Informacion</label>
+                </div>
+                <div class="col-md-4">
+                    <textarea class="form-control" type="textarea" name="texto">@ViewBag.ficha.Texto</textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Imagen</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="imagen" value="@ViewBag.ficha.Imagen" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Imagen (Archivo)</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="file" name="imagen" value="" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <input class="btn-success col-md-6" type="submit" value="Enviar" />
+            </div>
+            <input class="form-control" type="text" name="id" value="@ViewBag.ficha.ID" style="display:none" />
+        </form>
+    </div>

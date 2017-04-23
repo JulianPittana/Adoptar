@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="~/Content/estilo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="fichauno col-md-12">
+        <form action="Usuarios/Registrar" method="post" enctype="multipart/form-data">
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Mail</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="mail" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="nombre" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Contraseña</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="password" name="password" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Repetir Contraseña</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="password" name="password" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Imagen (Archivo)</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="file" name="imagen" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <input class="btn-success col-md-6" type="submit" value="Enviar" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

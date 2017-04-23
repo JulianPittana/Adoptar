@@ -127,7 +127,7 @@ namespace Adoptame.Controllers
         // GET: Fichas
 
         [HttpPost]
-        public ActionResult GuardarFicha(string tipo, string nombre, string imagen, string texto, string sexo, string ubicacion, string edad)
+        public ActionResult GuardarFicha(string tipo, string nombre, string imagen, string texto, string sexo, string ubicacion, string edad, HttpPostedFileBase imagenFile)
         {
             Ficha nuevaFicha = new Ficha();
             nuevaFicha.Tipo = tipo;
@@ -140,6 +140,11 @@ namespace Adoptame.Controllers
             nuevaFicha.Autor = ((Adoptar.Models.Usuario)Session["UsuarioLogueado"]);
             FichasManager manager = new FichasManager();
             manager.Insertar(nuevaFicha);
+
+            if (imagenFile != null)
+            {
+                imagenFile.SaveAs(Server.MapPath("~/Content/img/fichas/" + nuevaFicha.ID + ".jpg"));
+            }
 
             return RedirectToAction("Mostrar", "Fichas");
         }
