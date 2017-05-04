@@ -15,7 +15,10 @@ namespace Adoptar.Models
             //1-Conexión.. a qué BBDD
             //SqlConnection conexion = new SqlConnection(ConfigurationManager.AppSettings["ConexionBaseDeDatos"]);
             //SqlConnection conexion = new SqlConnection("Server=CPX-CYKSMSMJ1BK\\PEPITO;Database=Adoptame;Trusted_Connection=True;");
-            SqlConnection conexion = new SqlConnection("Server=Aduki-PC\\SQLEXPRESS;Database=Adoptame;Trusted_Connection=True;");
+            //SqlConnection conexion = new SqlConnection("Server=Aduki-PC\\SQLEXPRESS;Database=Adoptame;Trusted_Connection=True;");
+            ConexionManager con = new ConexionManager();
+            SqlConnection conexion = new SqlConnection();
+            conexion = con.Conectar();
             //2-nos conectamos
             conexion.Open();
             //3-creamos el objeto que nos permite escribir la sentencia

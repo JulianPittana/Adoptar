@@ -1,0 +1,121 @@
+.ficha
+{
+  background-color: #ffffff;
+	padding: 10px;
+	border: 1px solid #808080;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Raleway';
+    width:230px;
+    height:360px;
+
+	}
+
+.imagen {
+    width:200px;
+    height:150px;    
+    overflow:hidden;
+}
+.imagen img {
+    min-width:100%;
+}
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+.fichauno
+{
+  background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	border: 2px solid GRAY;
+    border-radius: 10px;
+    font-family: 'Open Sans';
+    /*margin-top: 50px;*/
+	}
+.fichalogin
+{
+  background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	border: 2px solid GRAY;
+    border-radius: 10px;
+    font-family: 'Open Sans';
+    margin-top: 150px;
+	}
+
+
+
+.imgindividual 
+{
+     border-radius:99999px;
+}
+.navbar-default {
+    background-color: #1d62b2;
+
+}
+.navbar-default .navbar-brand{
+
+   
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+
+
+
+.sti {
+    margin: 0 auto;
+
+}
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+.contenido {
+    margin-left:180px;
+    margin-bottom:150px;
+    
+}
+    
+#cuerpo { 
+
+    background-color: #fafafa;
+
+}
+
+.navhr {
+    margin-top: 0px;
+
+}
+
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}

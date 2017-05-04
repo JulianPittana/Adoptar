@@ -106,9 +106,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\fichas\21.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\Adopta333 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Somee.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -131,34 +132,37 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\FichasController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConexionManager.cs" />
     <Compile Include="Models\Ficha.cs" />
-    <Compile Include="Models\FichasManager.cs" />
+    <Compile Include="Models\HomeManager.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuariosManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
-    <Content Include="Views\Fichas\Adoptarmensaje.cshtml" />
-    <Content Include="Views\Fichas\Agregar.cshtml" />
-    <Content Include="Views\Fichas\Buscar.cshtml" />
-    <Content Include="Views\Fichas\Buscarfichas.cshtml" />
-    <Content Include="Views\Fichas\Eliminar.cshtml" />
-    <Content Include="Views\Fichas\Mismascotas.cshtml" />
-    <Content Include="Views\Fichas\Modificar.cshtml" />
-    <Content Include="Views\Fichas\Mostrar.cshtml" />
-    <Content Include="Views\Fichas\MostrarUno.cshtml" />
     <Content Include="Views\Usuarios\Login.cshtml" />
     <Content Include="Views\Usuarios\LoginFail.cshtml" />
     <Content Include="Views\Usuarios\Registrar.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Adoptarmensaje.cshtml" />
+    <Content Include="Views\Home\Agregar.cshtml" />
+    <Content Include="Views\Home\Buscar.cshtml" />
+    <Content Include="Views\Home\Buscarfichas.cshtml" />
+    <Content Include="Views\Home\Eliminar.cshtml" />
+    <Content Include="Views\Home\Mismascotas.cshtml" />
+    <Content Include="Views\Home\Modificar.cshtml" />
+    <Content Include="Views\Home\Mostrar.cshtml" />
+    <Content Include="Views\Home\MostrarUno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,7 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\fichas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

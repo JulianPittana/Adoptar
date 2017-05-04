@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="fichauno col-md-12">
+        <form action="/Fichas/GuardarFicha" method="post" enctype="multipart/form-data">
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Tipo</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="tipo">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Sexo</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="sexo">
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Edad</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" name="edad">
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Joven">Joven</option>
+                        <option value="Adulto">Adulto</option>
+                        <option value="Anciano">Anciano</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="nombre" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Ubicacion</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="ubicacion" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Informacion</label>
+                </div>
+                <div class="col-md-4">
+                    <textarea class="form-control" type="textarea" placeholder="Informacion" name="texto"></textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Imagen</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="imagen" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <label>Imagen (Archivo)</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="file" id="imagenArticuloInput" name="imagenFile" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <input class="btn-success col-md-6" type="submit" value="Enviar" />
+                @*<input class="form-control" type="text" name="autor" value=@(((Adoptame.Models.Usuario)Session["UsuarioLogueado"]).Nombre) style="display:none" />*@
+
+            </div>
+        </form>
+    </div>
