@@ -20,14 +20,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Mostrar", "Fichas")">Adoptar</a>
+                <a class="navbar-brand" href="@Url.Action("Mostrar", "Home")">Adoptar</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Buscar", "Fichas")">Adoptar</a></li>
-                    <li><a href="@Url.Action("Agregar", "Fichas")">Dar en adopcion</a></li>
+                    <li><a href="@Url.Action("Buscar", "Home")">Buscar Mascotas</a></li>
+                    <li><a href="@Url.Action("Agregar", "Home")">Dar en adopcion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!--<li><a href="#" onclick="bienvenida();" role="button">Ingresar</a></li>p'-->
@@ -36,7 +36,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="nombreUsuario">@(((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre)</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("Mismascotas","Fichas")">Mis Mascotas</a></li>
+                                <li><a href="@Url.Action("Mismascotas","Home")">Mis Mascotas</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a id="salir" href="@Url.Action("Logout","Usuarios")">Salir</a></li>
                             </ul>
@@ -44,7 +44,9 @@
                     }
                     else
                     {
+                        <li id="Registrarse"><a href="@Url.Action("Registrar","Usuarios")" role="button">Registrarse</a></li>
                         <li id="ingresar"><a href="@Url.Action("Login","Usuarios")" role="button">Ingresar</a></li>
+
                     }
                 </ul>
             </div><!-- /.navbar-collapse -->

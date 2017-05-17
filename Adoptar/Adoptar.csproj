@@ -163,6 +163,8 @@
     <Content Include="Views\Home\Modificar.cshtml" />
     <Content Include="Views\Home\Mostrar.cshtml" />
     <Content Include="Views\Home\MostrarUno.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Usuarios\Registrarnuevo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

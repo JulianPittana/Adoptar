@@ -26,23 +26,45 @@ namespace Adoptame.Controllers
                 TempData["Error"] = "El usuario no existe o está mal la contraseña";
             }
 
-            return RedirectToAction("Mostrar", "Fichas");
+            return RedirectToAction("Mostrar", "Home");
         }
 
         public ActionResult Logout()
         {
             Session["UsuarioLogueado"] = null;
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Mostrar", "Home");
         }
         public ActionResult Registrar()
         {
             return View();
 
         }
-        public ActionResult Registrarnuevo()
+        public ActionResult Registrarnuevo(string email, string password, string nombre)
         {
+            Usuario Usuarionuevo = new Usuario();
+            Usuarionuevo.Mail = email;
+            Usuarionuevo.Nombre = nombre;
+            Usuarionuevo.Password = password;
+            Usuario Usuarioacontrolar = new Usuario();
+            Usuarioacontrolar = Usuarionuevo;
+            UsuariosManager manager = new UsuariosManager();
+
+//            if(manager.Controlar(Usuarioacontrolar) != null)
+//{
+//                if (Usuarioacontrolar.Nombre != null)
+//                {
+//                    Session["controlnombre"] = "usado";
+//                }
+//                if (Usuarioacontrolar.Mail != null)
+//                {
+//                    Session["controlmail"] = "usado";
+//                }
+
+//                return RedirectToAction ("Registrar", "Usuarios");
+//            }
 
 
+            manager.Registrarse(Usuarionuevo);
             return View();
 
         }

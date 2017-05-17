@@ -2,10 +2,15 @@
        Layout = "~/Views/Shared/_Layout.cshtml";
     }
  <div class="row">
-        <div class="fichauno col-md-10 col-md-offset-1">
+        
+     @*<img class="imgindividual img-responsive" src="~/Content/img/fichas/21.jpg" alt="imagen">*@
 
+        <div class="fichauno col-md-10 col-md-offset-1">
+            
             <div class="col-md-6">
-            <img class="imgindividual img-responsive" src="@ViewBag.ficha.Imagen" alt="imagen">
+            <img class="imgindividual img-responsive" src=@ViewBag.ficha.Imagen alt="imagen">
+                @*<img src="@ViewBag.ficha.Imagenfile" alt="imagen">
+                <img src=@ViewBag.ficha.Imagenfile alt="imagen">*@
             </div>
             <div class="col-md-6">
                 <h2>@ViewBag.ficha.Nombre</h2>
@@ -21,7 +26,7 @@
                      if ((((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre) == ViewBag.ficha.Autor.Nombre)
 
                 {
-                    <a class="btn btn-primary col-md-4 btn-lg" href="@Url.Action("Modificar", "Fichas", new { id = @ViewBag.ficha.ID })">Modificar</a>
+                    <a class="btn btn-primary col-md-4 btn-lg" href="@Url.Action("Modificar", "Home", new { id = @ViewBag.ficha.ID })">Modificar</a>
                     <button class="btn btn-danger col-md-4 btn-lg" data-toggle="modal" data-target="#eliminar">Eliminar</button>   
                    }}
     @*<a class="btn-primary col-md-6 col-md-offset-6 btn-lg" href="@Url.Action("Modificar", "Fichas", new { ficha = ((Adoptame.Models.Ficha)(ViewBag.ficha)) })">Modificar</a>*@
@@ -41,7 +46,7 @@
                     <p>Llena los siguientes datos y pronto se pondran en contacto con vos.</p>
 
                     <div class="">
-                        <form action="/Fichas/Adoptar" method="post">
+                        <form action="/Home/Adoptar" method="post">
                             <div class="row form-group">
                                 <div class="col-md-2">
                                     <label>Nombre</label>
@@ -105,7 +110,7 @@
             </div>
             <div class="modal-body">
                 <p>¿Estas seguro que queres borrar la ficha de @ViewBag.ficha.Nombre? </p>
-                <a class="btn btn-danger btn-lg" href="@Url.Action("Eliminar", "Fichas", new { id = @ViewBag.ficha.ID })">Eliminar</a>
+                <a class="btn btn-danger btn-lg" href="@Url.Action("Eliminar", "Home", new { id = @ViewBag.ficha.ID })">Eliminar</a>
             </div>
         </div>
     </div>

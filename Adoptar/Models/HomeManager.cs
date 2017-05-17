@@ -34,9 +34,6 @@ namespace Adoptar.Models
             sentencia.ExecuteNonQuery();
             conexion.Close();
         }
-
-
-
         public void Modificar (Ficha ficha)
         {
             //SqlConnection conexion = new SqlConnection(ConfigurationManager.AppSettings["ConexionBaseDeDatos"]);
@@ -48,12 +45,11 @@ namespace Adoptar.Models
             conexion = con.Conectar();
             conexion.Open();
             SqlCommand sentencia = conexion.CreateCommand();
-            sentencia.CommandText = "UPDATE Fichas set Tipo=@Tipo, Titulo=@Titulo, Texto=@Texto, Imagen=@Imagen, Autor=@Autor, Sexo=@Sexo, Ubicacion=@Ubicacion, Edad=@Edad WHERE ID = @ID";
+            sentencia.CommandText = "UPDATE Fichas set Tipo=@Tipo, Titulo=@Titulo, Texto=@Texto, Imagen=@Imagen, Sexo=@Sexo, Ubicacion=@Ubicacion, Edad=@Edad WHERE ID = @ID";
 
             sentencia.Parameters.AddWithValue("@Titulo", ficha.Nombre);
             sentencia.Parameters.AddWithValue("@Texto", ficha.Texto);
             sentencia.Parameters.AddWithValue("@Imagen", ficha.Imagen);
-            sentencia.Parameters.AddWithValue("@Autor", "jorgegutierrez@gmail.com");
             sentencia.Parameters.AddWithValue("@Sexo", ficha.Sexo);
             sentencia.Parameters.AddWithValue("@Ubicacion", ficha.Ubicacion);
             sentencia.Parameters.AddWithValue("@Edad", ficha.Edad);
@@ -64,9 +60,6 @@ namespace Adoptar.Models
             conexion.Close();
 
         }
-
-
-
         public List<Ficha> ConsultarTodos()
         {
             List<Ficha> fichas = new List<Ficha>();
@@ -85,7 +78,7 @@ namespace Adoptar.Models
             //2-nos conectamos
             conexion.Open();
             //3-creamos el objeto que nos permite escribir la sentencia
-            SqlCommand sentencia = conexion.CreateCommand();
+            SqlCommand sentencia = conexion.CreateCommand();    
             //4-escribrimos la sentencia
             sentencia.CommandText = "SELECT * FROM Fichas ORDER by ID DESC";
             //5-ejecutamos la consulta
@@ -222,7 +215,6 @@ namespace Adoptar.Models
 
             return fichasfiltradas;
         }
-
         public long ConsultarUltimoID()
         {
             ConexionManager con = new ConexionManager();
@@ -240,10 +232,6 @@ namespace Adoptar.Models
             return fichaid;
 
         }
-        
-
-
-
         public Ficha Consultar(long id)
         {
             //SqlConnection conexion = new SqlConnection(ConfigurationManager.AppSettings["ConexionBaseDeDatos"]);
@@ -277,7 +265,6 @@ namespace Adoptar.Models
 
             return ficha;
         }
-
         public void Eliminar(long id)
         {
             ////SqlConnection conexion = new SqlConnection(ConfigurationManager.AppSettings["ConexionBaseDeDatos"]);

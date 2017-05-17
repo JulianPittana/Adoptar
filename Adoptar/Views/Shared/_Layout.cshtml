@@ -26,7 +26,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Buscar", "Home")">Adoptar</a></li>
+                    <li><a href="@Url.Action("Buscar", "Home")">Buscar Mascotas</a></li>
                     <li><a href="@Url.Action("Agregar", "Home")">Dar en adopcion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -44,7 +44,9 @@
                     }
                     else
                     {
+                        <li id="Registrarse"><a href="@Url.Action("Registrar","Usuarios")" role="button">Registrarse</a></li>
                         <li id="ingresar"><a href="@Url.Action("Login","Usuarios")" role="button">Ingresar</a></li>
+
                     }
                 </ul>
             </div><!-- /.navbar-collapse -->

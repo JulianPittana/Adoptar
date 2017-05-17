@@ -7,8 +7,8 @@
             foreach (Adoptar.Models.Ficha ficha in ViewBag.Fichas)
             {
                 
-                <a href="@Url.Action("MostrarUno", "Home", new { id = @ficha.ID })">
-                    <div class="ficha col-md-3">
+                <a href="@Url.Action("MostrarUno", "Home", new { id = @ficha.ID })" class="ficha col-md-4">
+                    <div>
                         <div class="imagen">
                             <img class="img-responsive img-rounded img-thumbnail img-rounded" src="@ficha.Imagen" alt="imagen">
                         </div>

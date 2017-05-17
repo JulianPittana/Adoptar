@@ -82,7 +82,7 @@ namespace Adoptame.Controllers
                 smptc.Timeout = 10000;
                 smptc.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smptc.UseDefaultCredentials = false;
-                smptc.Credentials = new NetworkCredential("julian.pittana@gmail.com", "Horadrim5");
+                smptc.Credentials = new NetworkCredential("julian.pittana@gmail.com", "Horadrim6");
 
                 var message = new MailMessage();
                 message.From = new MailAddress("julian.pittana@gmail.com", "Julian");
@@ -99,7 +99,7 @@ namespace Adoptame.Controllers
                 mensaje = "ERROR: " + ex.Message;
             }
             ViewBag.mensaje = mensaje;
-            return View("/Views/Fichas/Adoptarmensaje.cshtml");
+            return View("/Views/Home/Adoptarmensaje.cshtml");
         }
 
         public ActionResult Modificar(long id)
@@ -114,7 +114,7 @@ namespace Adoptame.Controllers
         {
             HomeManager manager = new HomeManager();
             manager.Modificar(ficha);
-            return RedirectToAction("MostrarUno", "Fichas", new { id = @ficha.ID });
+            return RedirectToAction("MostrarUno", "Home", new { id = @ficha.ID });
         }
 
         public ActionResult Eliminar(long id)
@@ -124,7 +124,7 @@ namespace Adoptame.Controllers
             return View();
         }
 
-        // GET: Fichas
+        // GET: Home
 
         [HttpPost]
         public ActionResult GuardarFicha(string tipo, string nombre, string imagen, string texto, string sexo, string ubicacion, string edad, HttpPostedFileBase imagenFile)
@@ -154,7 +154,7 @@ namespace Adoptame.Controllers
 
 
 
-            return RedirectToAction("Mostrar", "Fichas");
+            return RedirectToAction("Mostrar", "Home");
         }
     }
 }

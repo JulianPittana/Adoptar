@@ -1,8 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@*@if (Session["UsuarioLogueado"] = null)*@
+@if (Session["UsuarioLogueado"] == null)
+{
+    Response.Redirect("/Usuarios/Login");
+}
+
     <div class="fichauno col-md-12">
-        <form action="/Fichas/GuardarFicha" method="post" enctype="multipart/form-data">
+        <form action="/Home/GuardarFicha" method="post" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-md-2">
                     <label>Tipo</label>
