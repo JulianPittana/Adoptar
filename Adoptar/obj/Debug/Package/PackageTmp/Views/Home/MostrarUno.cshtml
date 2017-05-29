@@ -1,41 +1,91 @@
 ﻿   @{
        Layout = "~/Views/Shared/_Layout.cshtml";
     }
- <div class="row">
-        
-     @*<img class="imgindividual img-responsive" src="~/Content/img/fichas/21.jpg" alt="imagen">*@
 
-        <div class="fichauno col-md-10 col-md-offset-1">
-            
-            <div class="col-md-6">
-            <img class="imgindividual img-responsive" src=@ViewBag.ficha.Imagen alt="imagen">
-                @*<img src="@ViewBag.ficha.Imagenfile" alt="imagen">
-                <img src=@ViewBag.ficha.Imagenfile alt="imagen">*@
-            </div>
-            <div class="col-md-6">
-                <h2>@ViewBag.ficha.Nombre</h2>
-                <hr class="divider"/>
-                <p>@ViewBag.ficha.Ubicacion</p>
-                <p>@ViewBag.ficha.Sexo,@ViewBag.ficha.Edad</p>
-                <hr class="divider" />
-                <p>@ViewBag.ficha.Texto</p>
-                    <button class="btn btn-success col-md-4 btn-lg" data-toggle="modal" data-target="#myModal">Adoptar</button>
-                    
-                @if (Session["UsuarioLogueado"] != null)
-                {
+ @*<div class="container">
+     <div class="row">
+         <div class="fichauno col-md-10 col-md-offset-1">
+             <div class="col-md-6">
+                 <img class="imgindividual img-responsive" src=@ViewBag.ficha.Imagen alt="imagen">
+             </div>
+             <div class="col-md-6">
+                 <h2>@ViewBag.ficha.Nombre</h2>
+                 <hr class="divider" />
+                 <p>@ViewBag.ficha.Ubicacion</p>
+                 <p>@ViewBag.ficha.Sexo,@ViewBag.ficha.Edad</p>
+                 <hr class="divider" />
+                 <p>@ViewBag.ficha.Texto</p>
+                 <button class="btn btn-success col-md-4 btn-lg" data-toggle="modal" data-target="#myModal">Adoptar</button>
+
+                 @if (Session["UsuarioLogueado"] != null)
+                 {
                      if ((((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre) == ViewBag.ficha.Autor.Nombre)
 
-                {
-                    <a class="btn btn-primary col-md-4 btn-lg" href="@Url.Action("Modificar", "Home", new { id = @ViewBag.ficha.ID })">Modificar</a>
-                    <button class="btn btn-danger col-md-4 btn-lg" data-toggle="modal" data-target="#eliminar">Eliminar</button>   
-                   }}
-    @*<a class="btn-primary col-md-6 col-md-offset-6 btn-lg" href="@Url.Action("Modificar", "Fichas", new { ficha = ((Adoptame.Models.Ficha)(ViewBag.ficha)) })">Modificar</a>*@
-                 </div>
+                     {
+                         <a class="btn btn-primary col-md-4 btn-lg" href="@Url.Action("Modificar", "Home", new { id = @ViewBag.ficha.ID })">Modificar</a>
+                         <button class="btn btn-danger col-md-4 btn-lg" data-toggle="modal" data-target="#eliminar">Eliminar</button>
+                     }
+                 }
+             </div>
+         </div>
+     </div>
+</div>*@
 
-                </div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="paneluno panel-primary uno">
+            <div class="panel-headinguno"><h2>@ViewBag.ficha.Nombre</h2></div>
+                <div class="panel-body ima2">
+                    <div class="col-md-6">
+                        <img id="imagenmuestrauno" class="img-responsive img-thumbnail" src=@ViewBag.ficha.Imagen alt="imagen">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel-contenido">
+                            <p>@ViewBag.ficha.Ubicacion</p>
+                            <p>@ViewBag.ficha.Sexo,@ViewBag.ficha.Edad</p>
+                            <hr class="divider" />
+                            <p>@ViewBag.ficha.Texto</p>
+                            <button class="btn btn-success col-md-4 btn-lg" data-toggle="modal" data-target="#myModal">Adoptar</button>
+                            @if (Session["UsuarioLogueado"] != null)
+                            {
+                                if ((((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre) == ViewBag.ficha.Autor.Nombre)
+
+                                {
+                                    <a class="btn btn-primary col-md-4 btn-lg" href="@Url.Action("Modificar", "Home", new { id = @ViewBag.ficha.ID })">Modificar</a>
+                                    <button class="btn btn-danger col-md-4 btn-lg" data-toggle="modal" data-target="#eliminar">Eliminar</button>
+                                }
+                            }
+                        </div>
+                    </div>
+                  </div>
+            <div class="panel-fondo"></div>
+
+        </div>
+    </div>
+</div>
+
+@*<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+         Modal content
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
             </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>*@
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="mcodal-dialog modal-sm">
+        <div class="modal-dialog modal-lg">
+
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -44,64 +94,60 @@
                 <div class="modal-body">
                     <p>¡Que bueno que quieras adoptar a @ViewBag.ficha.Nombre! </p>
                     <p>Llena los siguientes datos y pronto se pondran en contacto con vos.</p>
-
-                    <div class="">
-                        <form action="/Home/Adoptar" method="post">
-                            <div class="row form-group">
-                                <div class="col-md-2">
-                                    <label>Nombre</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" name="nombre" />
-                                </div>
+                    <form action="/Home/Adoptar" method="post">
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label>Nombre</label>
                             </div>
-                            <div class="row form-group">
-                                <div class="col-md-2">
-                                    <label>Ubicacion</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" name="ubicacion" />
-                                </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="nombre" />
                             </div>
-                            <div class="row form-group">
-                                <div class="col-md-2">
-                                    <label>Telefono</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" name="telefono" required="" />
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label>Ubicacion</label>
                             </div>
-                            <div class="row form-group">
-                                <div class="col-md-2">
-                                    <label>Mail</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="email" name="mail" placeholder="Email address" required="" />
-                                </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="ubicacion" />
                             </div>
-                            <div class="row form-group">
-                                <div class="col-md-2">
-                                    <label>Mensaje</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <textarea class="form-control" type="textarea" placeholder="Mensaje" name="texto"></textarea>
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label>Telefono</label>
                             </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="telefono" required="" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label>Mail</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="email" name="mail" placeholder="Email address" required="" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label>Mensaje</label>
+                            </div>
+                            <div class="col-md-8">
+                                <textarea class="form-control" type="textarea" placeholder="Mensaje" name="texto"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
                             <div class="row form-group">
                                 <input class="btn-lg btn-block btn-success" type="submit" value="Enviar" />
                             </div>
-                            <input class="form-control" type="text" name="id" value="@ViewBag.ficha.ID" style="display:none" />
-                        </form>
-
-                        
-
-                    </div>
+                        </div>
+                        <input class="form-control" type="text" name="id" value="@ViewBag.ficha.ID" style="display:none" />
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-
+</div>
 <div class="modal fade" id="eliminar" role="dialog">
+
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">

@@ -11,10 +11,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Adoptar.dll">
-      <publishTime>05/16/2017 01:33:44</publishTime>
+      <publishTime>05/23/2017 20:46:14</publishTime>
     </File>
     <File Include="bin/Adoptar.pdb">
-      <publishTime>05/16/2017 01:33:44</publishTime>
+      <publishTime>05/18/2017 03:26:34</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/22/2013 08:43:40</publishTime>
@@ -109,6 +109,24 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="bin/WebGrease.dll">
       <publishTime>07/17/2013 17:03:52</publishTime>
     </File>
+    <File Include="Content/img/001-instagram-social-network-logo-of-photo-camera.png">
+      <publishTime>04/04/2017 00:46:38</publishTime>
+    </File>
+    <File Include="Content/img/002-twitter-logo-silhouette.png">
+      <publishTime>04/04/2017 00:46:38</publishTime>
+    </File>
+    <File Include="Content/img/003-facebook-logo.png">
+      <publishTime>04/04/2017 00:46:38</publishTime>
+    </File>
+    <File Include="Content/img/adoptar.jpg">
+      <publishTime>05/23/2017 18:18:43</publishTime>
+    </File>
+    <File Include="Content/img/adoptarhorizontal.jpg">
+      <publishTime>05/23/2017 19:22:39</publishTime>
+    </File>
+    <File Include="Content/img/adoptarhorizontalblanco.jpg">
+      <publishTime>05/23/2017 20:38:48</publishTime>
+    </File>
     <File Include="Content/img/fichas/21.jpg">
       <publishTime>05/04/2017 13:05:55</publishTime>
     </File>
@@ -155,16 +173,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/04/2017 18:22:09</publishTime>
     </File>
     <File Include="Styles/bootstrap.css">
-      <publishTime>04/04/2017 00:46:38</publishTime>
+      <publishTime>07/25/2016 15:53:28</publishTime>
     </File>
     <File Include="Styles/bootstrap.min.css">
       <publishTime>04/04/2017 00:46:38</publishTime>
     </File>
     <File Include="Styles/estilo.css">
-      <publishTime>05/16/2017 02:14:05</publishTime>
+      <publishTime>05/23/2017 19:43:10</publishTime>
     </File>
     <File Include="Styles/Sticky.css">
-      <publishTime>04/19/2017 15:13:39</publishTime>
+      <publishTime>05/18/2017 17:22:08</publishTime>
     </File>
     <File Include="Views/Fichas/Adoptarmensaje.cshtml">
       <publishTime>04/04/2017 18:42:17</publishTime>
@@ -197,13 +215,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/04/2017 18:42:17</publishTime>
     </File>
     <File Include="Views/Home/Agregar.cshtml">
-      <publishTime>05/11/2017 01:58:45</publishTime>
+      <publishTime>05/19/2017 20:26:27</publishTime>
     </File>
     <File Include="Views/Home/Buscar.cshtml">
-      <publishTime>04/04/2017 18:42:17</publishTime>
+      <publishTime>05/18/2017 13:37:55</publishTime>
     </File>
     <File Include="Views/Home/Buscarfichas.cshtml">
-      <publishTime>04/04/2017 18:42:17</publishTime>
+      <publishTime>05/18/2017 13:35:49</publishTime>
     </File>
     <File Include="Views/Home/Eliminar.cshtml">
       <publishTime>04/04/2017 18:42:17</publishTime>
@@ -215,22 +233,25 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>05/11/2017 00:03:42</publishTime>
     </File>
     <File Include="Views/Home/Mostrar.cshtml">
-      <publishTime>05/04/2017 17:18:50</publishTime>
+      <publishTime>05/23/2017 19:24:28</publishTime>
+    </File>
+    <File Include="Views/Home/Mostrar2.cshtml">
+      <publishTime>05/18/2017 01:48:09</publishTime>
     </File>
     <File Include="Views/Home/MostrarUno.cshtml">
-      <publishTime>05/04/2017 17:09:07</publishTime>
+      <publishTime>05/22/2017 13:02:24</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/16/2017 01:54:51</publishTime>
+      <publishTime>05/23/2017 20:39:00</publishTime>
     </File>
     <File Include="Views/Usuarios/Login.cshtml">
-      <publishTime>04/04/2017 18:42:16</publishTime>
+      <publishTime>05/18/2017 17:52:19</publishTime>
     </File>
     <File Include="Views/Usuarios/LoginFail.cshtml">
       <publishTime>04/04/2017 18:42:10</publishTime>
     </File>
     <File Include="Views/Usuarios/Registrar.cshtml">
-      <publishTime>05/16/2017 01:28:34</publishTime>
+      <publishTime>05/19/2017 20:30:25</publishTime>
     </File>
     <File Include="Views/Usuarios/Registrarnuevo.cshtml">
       <publishTime>05/11/2017 15:30:36</publishTime>
@@ -242,7 +263,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>05/11/2017 14:06:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/02/2017 19:41:03</publishTime>
+      <publishTime>05/18/2017 17:09:37</publishTime>
     </File>
   </ItemGroup>
 </Project>

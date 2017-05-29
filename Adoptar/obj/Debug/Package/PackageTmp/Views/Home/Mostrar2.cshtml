@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
+   <div class="container">
     @if (ViewBag.Fichas != null)
     {
         foreach (Adoptar.Models.Ficha ficha in ViewBag.Fichas)
@@ -9,7 +9,9 @@
             <div class="col-md-3">
                 <a href="@Url.Action("MostrarUno", "Home", new { id = @ficha.ID })">
                     <div class="panel panel-primary ss">
-                        <div class="panel-body ima"><img src="@ficha.Imagen" class="img-responsive img-thumbnail2 center-block" alt="Image"></div>
+
+
+                        <div class="panel-body ima"><img src="@ficha.Imagen" class="img-responsive " style="width:100%" alt="Image"></div>
                         <div class="panel-heading"><h2>@ficha.Nombre</h2></div>
                         <div class="panel-footer">
                             <p>@ficha.Ubicacion</p>
@@ -17,7 +19,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
-        }
-    }
-</div>
+             </div>
+           }
+      }
+          </div>

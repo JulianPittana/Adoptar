@@ -31,6 +31,17 @@ namespace Adoptame.Controllers
 
         }
 
+        public ActionResult Mostrar2()
+        {
+            HomeManager manager = new HomeManager();
+            List<Ficha> fichas = manager.ConsultarTodos();
+            ViewBag.Fichas = fichas;
+
+
+            return View();
+
+        }
+
         public ActionResult Buscar(Ficha ficha)
         {
 

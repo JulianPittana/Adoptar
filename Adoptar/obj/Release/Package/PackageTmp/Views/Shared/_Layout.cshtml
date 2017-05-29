@@ -4,11 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.title</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    @*<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">*@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     @System.Web.Optimization.Styles.Render("~/bundle/css")
 </head>
-<body id="cuerpo">
+<body>
     <!-- Barra de navegación -->
     <nav class="navbar-default">
         <div class="container-fluid">
@@ -20,14 +27,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Mostrar", "Fichas")">Adoptar</a>
+                <a class="navbar-left" href="@Url.Action("Mostrar", "Home")"><img style="max-height:50px;" class="img-responsive" src="~/Content/img/adoptarhorizontalblanco.jpg"/></a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Buscar", "Fichas")">Adoptar</a></li>
-                    <li><a href="@Url.Action("Agregar", "Fichas")">Dar en adopcion</a></li>
+                    <li><a href="@Url.Action("Buscar", "Home")">Buscar Mascotas</a></li>
+                    <li><a href="@Url.Action("Agregar", "Home")">Dar en adopcion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!--<li><a href="#" onclick="bienvenida();" role="button">Ingresar</a></li>p'-->
@@ -36,7 +42,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="nombreUsuario">@(((Adoptar.Models.Usuario)Session["UsuarioLogueado"]).Nombre)</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("Mismascotas","Fichas")">Mis Mascotas</a></li>
+                                <li><a href="@Url.Action("Mismascotas","Home")">Mis Mascotas</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a id="salir" href="@Url.Action("Logout","Usuarios")">Salir</a></li>
                             </ul>
@@ -44,7 +50,9 @@
                     }
                     else
                     {
-                        <li id="ingresar"><a href="@Url.Action("Login","Usuarios")" role="button">Ingresar</a></li>
+                        <li id="Registrarse"><a href="@Url.Action("Registrar","Usuarios")" role="button"><span class="glyphicon glyphicon-pencil "></span> Registrarse</a></li>
+                        <li id="ingresar"><a href="@Url.Action("Login","Usuarios")" role="button"> <span class="glyphicon glyphicon-user"></span> Ingresar</a></li>
+
                     }
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -53,19 +61,21 @@
     </nav>
     @RenderBody()
 
+    @*<footer id="footer">
+        <div class="col-md-1 col-md-offset-9"><img src="~/Content/img/003-facebook-logo.png" class="img-responsive " alt="Image"></div>
+        <div class="col-md-1"><img src="~/Content/img/002-twitter-logo-silhouette.png" class="img-responsive "alt="Image"></div>
+        <div class="col-md-1"><img src="~/Content/img/001-instagram-social-network-logo-of-photo-camera.png" class="img-responsive " alt="Image"></div>  
+    </footer>*@
+   @System.Web.Optimization.Scripts.Render("~/bundle/js")
+    <div class="">
+        <div class="text-center center-block">
+            <a href=""><i class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href=""><i class="fa fa-twitter-square fa-3x social"></i></a>
+            <a href=""><i class="fa fa-google-plus-square fa-3x social"></i></a>
+            <a href=""><i class="fa fa-envelope-square fa-3x social"></i></a>
+        </div>
+    </div>
 
-    <footer class="footer">
-        <div class="col-md-1 col-md-offset-9 img-responsive center-block">
-            <img src="~/Content/img/003-facebook-logo.png" />
-        </div>
-        <div class="col-md-1 img-responsive center-block">
-            <img src="~/Content/img/002-twitter-logo-silhouette.png" />
-        </div>
-        <div class="col-md-1 img-responsive center-block">
-            <img src="~/Content/img/001-instagram-social-network-logo-of-photo-camera.png" />
-        </div>
-
-</footer>
-    @System.Web.Optimization.Scripts.Render("~/bundle/js")
 </body>
+
 </html>

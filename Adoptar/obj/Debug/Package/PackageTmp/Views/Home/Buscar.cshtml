@@ -1,59 +1,53 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Buscar</title>
-</head>
-<body>
-    <div class="fichauno col-md-12">
-        <form action="/Fichas/Buscarfichas" method="post" enctype="multipart/form-data">
-            <div class="row form-group">
-                <div class="col-md-2">
-                    <label>Tipo</label>
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <h5>Ingresa tus preferencias de busqueda.</h5>
+            <form action="/Home/Buscarfichas" method="post" enctype="multipart/form-data">
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label>Tipo</label>
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" name="tipo">
+                            <option value="-1">Todos</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <select class="form-control" name="tipo">
-                        <option value="-1">Todos</option>
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                    </select>
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label>Sexo</label>
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" name="sexo">
+                            <option value="-1">Todos</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-md-2">
-                    <label>Sexo</label>
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <label>Edad</label>
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" name="edad">
+                            <option value="-1">Todos</option>
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Joven">Joven</option>
+                            <option value="Adulto">Adulto</option>
+                            <option value="Anciano">Anciano</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <select class="form-control" name="sexo">
-                        <option value="-1">Todos</option>
-                        <option value="Macho">Macho</option>
-                        <option value="Hembra">Hembra</option>
-                    </select>
+                <div class="row form-group">
+                    <input id="button" class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Buscar" />
                 </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-md-2">
-                    <label>Edad</label>
-                </div>
-                <div class="col-md-4">
-                    <select class="form-control" name="edad">
-                        <option value="-1">Todos</option>
-                        <option value="Cachorro">Cachorro</option>
-                        <option value="Joven">Joven</option>
-                        <option value="Adulto">Adulto</option>
-                        <option value="Anciano">Anciano</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row form-group">
-                <input class="btn-default col-md-6" type="submit" value="Buscar" />
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+</div>

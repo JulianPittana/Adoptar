@@ -1,25 +1,24 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="contenido">
-    @if (ViewBag.Fichas != null)
+<div class="container">
+
+     @if (ViewBag.Fichas != null)
     {
         foreach (Adoptar.Models.Ficha ficha in ViewBag.Fichas)
         {
-
-            <a href="@Url.Action("MostrarUno", "Fichas",new { id = @ficha.ID })">
-                <div class="ficha col-md-3">
-                    <div class="imagen">
-                        <img class="img-responsive img-rounded img-thumbnail img-rounded" src="@ficha.Imagen" alt="imagen">
+            <div class="col-md-3">
+                <a href="@Url.Action("MostrarUno", "Home", new { id = @ficha.ID })">
+                    <div class="panel panel-primary ss">
+                        <div class="panel-body ima"><img src="@ficha.Imagen" class="img-responsive " style="width:100%" alt="Image"></div>
+                        <div class="panel-heading"><h2>@ficha.Nombre</h2></div>
+                        <div class="panel-footer">
+                            <p>@ficha.Ubicacion</p>
+                            <p>@ficha.Sexo,@ficha.Edad</p>
+                        </div>
                     </div>
-
-                    <hr class="divider" />
-                    <h2>@ficha.Nombre</h2>
-                    <p>@ficha.Ubicacion</p>
-                    <p>@ficha.Sexo,@ficha.Edad</p>
-                    <hr class="divider" />
-                </div>
-            </a>
+                </a>
+            </div>
         }
     }
 </div>
